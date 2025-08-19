@@ -1,0 +1,387 @@
+
+// ===============================
+// function converter px para rem
+// ===============================
+@function parseRem($values...) {  // função para converter um valor em "px" para um valor em "rem".
+    $result: (); // Cria uma lista vazia.
+
+    @each $value in $values {    // essa linha em português seria "cada" $value em "$values", e como um forEach.
+        $converted: ($value / 16) * 1rem;
+        $result: append($result, $converted, space);
+    }
+    @return $result;
+}
+
+// ============================
+// Mixin select 
+// ============================
+@mixin select-style($select-font-size: 16, $select-border-color: #60698181, $select-focus-border-color: #2559d3) {
+    // Estilo base 
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: parseRem(35);
+    padding: 0rem 2.25rem 0rem 0.75rem;
+    font-size: parseRem($select-font-size);
+    font-family: inherit;
+    font-weight: 400;
+    line-height: 1.5;
+
+    // Cores e bordas
+    color: #9FA6BC;
+    background-color: #141824;
+    border: 1px solid $select-border-color;
+    border-radius: parseRem(6);
+    
+    
+    // Ícone de seta personalizado
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%239FA6BC' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.75rem center;
+    background-size: 16px 12px;
+    
+    // Remover aparência padrão
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    
+    // Transição suave
+    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+
+    // Estado de foco
+    &:focus {
+        border-color: $select-focus-border-color;
+        outline: 0;
+    }
+
+    // Estado desabilitado
+    &:disabled {
+        background-color: #e9ecef;
+        color: #6c757d;
+        cursor: not-allowed;
+        opacity: 1;
+    }
+}
+////////////////////////////////
+
+
+// ============================
+// Mixin input 
+// ============================
+@mixin input-style(
+    $font-size: 15,
+    $background-color: color2,
+    $border-color: #ced4da,
+    $focus-border-color: #2559d3,
+    ) {
+
+    // Estilo base
+    display: block;
+    width: 100%;
+    height: 35px;
+    padding: parseRem(5, 10); // 5px 10px
+    font-size: parseRem($font-size);
+    font-weight: 400;
+    color: #9FA6BC;
+
+    @if $background-color == color1 {
+        background-color: #191D2C;
+    } @else if $background-color == color2 {
+        background-color: #141824;
+    } @else {
+        background-color: #fff;
+    } 
+
+    background-clip: padding-box;
+    border: 1px solid #60698181;
+    border-radius: parseRem(6); // 6px
+
+    
+
+    // Estado de foco
+    &:focus {
+        border: 1px solid #2559d3;
+        transition: all 0.2s ease-in-out;
+        outline: 0;
+    }
+
+    // Estado desabilitado e readonly
+    &:disabled,
+    &[readonly] {
+        background-color: #e9ecef;
+        opacity: 1;
+    }
+
+    // Placeholder
+    &::placeholder {
+        color: #6c757d;
+        opacity: 1;
+    }
+
+    
+}
+////////////////////////////////
+
+
+// ============================
+// Mixin flatpickr 
+// ============================
+@mixin flatpickr-style(
+    $color-bg: #141824,
+    $color-text: #9fa6bc,
+    $color-text-disabled: #555,
+    $color-selected: #85A9FF,
+    $color-hover: #4d4d5f44,
+    $color-weekday: #9fa6bc,
+    $color-arrow: #ffffff
+) {
+   body .flatpickr-calendar {
+        width: parseRem(342);
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+        flex-direction: column !important;
+        color: $color-text;
+        background-color: $color-bg !important;
+        border-radius: parseRem(5);
+        box-shadow: 1px 0 0 #373e53c7,-1px 0 0 #373e53c7,0 1px 0 #373e53c7,0 -1px 0 #373e53c7,0 3px 13px rgba(0, 0, 0, 0);
+
+            .flatpickr-months {
+                display: flex !important;
+                justify-content: center !important;
+                align-items: center !important;
+
+                .flatpickr-month {
+                    display: flex !important;
+                    justify-content: center !important;
+                    align-items: center !important;
+                    margin-top: parseRem(10); // 10px
+                    margin-bottom: parseRem(10); // 10px
+
+                .flatpickr-current-month {
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                    justify-content: center;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+                    position: static;
+                    width: auto;
+                    height: 100%;
+                    padding: 0 2rem;
+                    font-size: parseRem(22);
+                    color: #CBD0DD !important;
+
+                    select, input {
+                        font-weight: 500 !important;
+                    }
+
+                }
+            }
+            }
+        
+        .flatpickr-innerContainer .flatpickr-rContainer {
+            width: 100% !important;
+        }
+
+        .flatpickr-weekdays {
+        .flatpickr-weekday {
+            color: $color-weekday;
+            font-weight: 600;
+        }
+        }
+
+        .flatpickr-days {
+            width: 100% !important;
+            
+            .flatpickr-day {
+                width: parseRem(32) !important;
+                max-width: parseRem(32) !important;
+                height: parseRem(32)!important;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                line-height: 1;
+                margin: parseRem(4) !important;
+                font-weight: 600;
+                border: 0;
+                color: $color-text;
+                background: transparent;
+                border-radius: parseRem(4);// 6px
+                -webkit-box-align: center;
+                -webkit-box-pack: center;
+                flex-basis: 14.2857143%;
+
+                &.flatpickr-day.weekend-day {
+                    color: #FFCC85;
+                }
+
+                &.flatpickr-disabled,
+                &.prevMonthDay,
+                &.nextMonthDay {
+                    color: $color-text-disabled !important;
+                }
+
+                &.selected,
+                &.startRange,
+                &.endRange,
+                &.selected.inRange,
+                &.startRange.inRange,
+                &.endRange.inRange {
+                    background: $color-selected !important;
+                    color: rgb(36, 34, 34) !important;
+                    border: none !important;
+                    border-radius: 50%;
+                }
+
+                &:hover {
+                    background: $color-hover;
+                    color: $color-text;
+                    border: none !important;
+                }
+            }
+        }
+
+        &.hasTime .flatpickr-time {
+            width: 100%;
+            border-top: 1px solid #60698181;
+
+            input {
+                color: #596686;
+                font-weight: 500;
+            }
+        }
+
+        .flatpickr-time input:hover,.flatpickr-time .flatpickr-am-pm:hover,.flatpickr-time input:focus,.flatpickr-time .flatpickr-am-pm:focus {
+            background-color: #ffffff0c;
+        }
+    }
+
+    .flatpickr-calendar.animate.arrowTop.arrowLeft.open {
+        border: none !important;
+    }
+
+    .flatpickr-calendar:before,.flatpickr-calendar:after {
+        position: absolute;
+        display: block;
+        pointer-events: none;
+        border: none !important;
+        content: '';
+        height: 0;
+        width: 0;
+        left: 22px
+    }
+
+    .flatpickr-calendar.rightMost:before,.flatpickr-calendar.arrowRight:before,.flatpickr-calendar.rightMost:after,.flatpickr-calendar.arrowRight:after {
+        left: auto;
+        right: 22px
+    }
+
+    .flatpickr-calendar.arrowCenter:before,.flatpickr-calendar.arrowCenter:after {
+        left: 50%;
+        right: 50%
+    }
+
+    .flatpickr-calendar:before {
+        border-width: 5px;
+        margin: 0 -5px;
+        border: none !important;
+    }
+
+    .flatpickr-calendar:after {
+        border-width: 4px;
+        margin: 0 -4px;
+        border: none !important;
+    }
+
+    .flatpickr-calendar.arrowTop:before,.flatpickr-calendar.arrowTop:after {
+        bottom: 100%
+    }
+
+    .flatpickr-calendar.arrowTop:before {
+        border: none !important;
+    }
+
+    .flatpickr-calendar.arrowTop:after {
+        border-bottom-color: #2a7e8f;
+    }
+
+    .flatpickr-calendar.arrowBottom:before,.flatpickr-calendar.arrowBottom:after {
+        top: 100%
+    }
+
+    .flatpickr-calendar.arrowBottom:before {
+        border-top-color: #e6e6e6;
+        border: none !important;
+    }
+
+    .flatpickr-calendar.arrowBottom:after {
+        border-top-color: #fff;
+        border: none !important;
+    }
+
+
+    .flatpickr-months .flatpickr-prev-month {
+        margin-left: parseRem(15);
+    }
+
+    .flatpickr-months .flatpickr-next-month {
+        margin-right: parseRem(16);
+    }
+
+    .flatpickr-months .flatpickr-prev-month , .flatpickr-months .flatpickr-next-month  { // Cor do SVG de seta < >
+        margin-top: parseRem(6);
+    }
+
+    .flatpickr-months .flatpickr-prev-month svg, .flatpickr-months .flatpickr-next-month svg { // Cor do SVG de seta < >
+        fill: #9fa6bc !important;
+        font-weight: 600 !important;
+
+        &:hover {
+            fill: #9fa6bc !important;
+        }
+    }
+
+    .flatpickr-current-month .flatpickr-monthDropdown-months {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+
+        option {
+            color: transparent !important;
+            background-color: transparent !important;
+        }
+    }
+
+    .flatpickr-day.inRange {
+        border-radius: 0px !important;
+        -webkit-box-shadow: -5px 0 0 #141824, 5px 0 0 #141824 !important;
+        box-shadow: none !important;
+        background-color: #252D45 !important;
+    }
+
+    body .flatpickr-calendar .flatpickr-days .flatpickr-day.startRange {
+        background: #85A9FF !important;
+        color: rgb(36, 34, 34) !important;
+        border: none !important;
+        border-top-left-radius: 50% !important;
+        border-bottom-left-radius: 50% !important;
+        border-radius: 0px;
+    }
+
+    body .flatpickr-calendar .flatpickr-days .flatpickr-day.endRange {
+        background: #85A9FF !important;
+        color: rgb(36, 34, 34) !important;
+        border: none !important;
+        border-top-right-radius: 50% !important;
+        border-bottom-right-radius: 50% !important;
+        border-radius: 0px;
+    }
+}
+////////////////////////////////
+
+
+

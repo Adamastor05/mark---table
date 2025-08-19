@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.7.1/nouislider.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body>
+
+    <!-- Div de para deixar o fundo com blur quando o modal de filtro abrir -->
+    <div class="overlay" id="overlay"></div>    
+
+    <main>
+        <div class="conteiner">
+            <div class="div-dados">
+                <div class="div-grids" id="vendas">
+                    <div class="content-dados">
+                        <h4>Vendas</h4>
+                        <span id="total-de-vendas">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="div-grids" id="numero-de-pedidos">
+                    <div class="content-dados">
+                        <h4>Pedidos</h4>
+                        <span id="pedidos">0</span>
+                    </div>
+                </div>
+                <div class="div-grids" id="ticket-medio">
+                    <div class="content-dados">
+                        <h4>Ticket médio</h4>
+                        <span id="content-ticket-medio">R$ 0,00</span>
+                    </div>
+                </div>
+                <div class="div-grids" id="sessoes-no-ecommerce">
+                    <div class="content-dados">
+                        <h4>Sessões</h4>
+                        <span id="sessoes-no-site">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="total-table">
+
+                <div class="table-header">
+                    <div class="table-header-title">
+                        <h3>Analise de vendas</h3>
+                        <a href=""></a>
+                    </div>
+                    <div class="table-header-search-filter-add">
+                        <div class="div-input-search">
+                            <div class="icon-search">
+                                <i class="fa-solid fa-magnifying-glass"></i>
+                            </div>
+                            <input type="text" class="input-search" placeholder="Pesquisar">
+                        </div>
+                        <div class="filter">
+                            <button class="btn-modal-filter">
+                                <i class="fa-solid fa-filter"></i>
+                            </button>
+
+                            <!-- Modal de filtro -->
+                            <div class="modal-filter">
+                                <div class="form-filter">
+
+                                    <!-- Header do modal -->
+                                    <div class="filter-header">
+                                        <div class="filter-header-content">
+                                            <h3>Filtros</h3>
+                                            <button class="btn-close-filter">
+                                                <i class="fa-solid fa-xmark"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filtro de data -->
+                                    <div class="filter-section-date">
+                                        <h4>Data</h4>
+                                        <div class="filter-date-fields">
+                                            <div class="filter-date-field">
+                                                <label class="filter-labels-date">De</label>
+                                                <input type="text" class="filter-input-date" id="filter-input-date-start" placeholder="Selecione a data">
+                                            </div>
+                                            <div class="filter-date-field">
+                                                <label class="filter-labels-date">Até</label>
+                                                <input type="date" class="filter-input-date" id="filter-input-date-end" placeholder="Selecione a data">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Filtro de canal de venda -->
+                                    <div class="filter-section-canal-de-venda">
+                                        <h4>Canal de venda</h4>
+                                        <select class="filter-selects" id="filter-select-canal-de-venda">
+                                            <option selected value>Todos os canais</option>
+                                            <option value="e-commerce">E-Commerce</option>
+                                            <option value="whatsapp">Whatsapp</option>
+                                            <option value="loja-fisica">Loja fisica</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Filtro de status de pagamento -->
+                                    <div class="filter-section-status-de-pagamengo">
+                                        <h4>Status de pagamento</h4>
+                                        <select class="filter-selects" id="filter-select-sts-de-pagamento">
+                                            <option selected value>Todos os status</option>
+                                            <option value="pago">Pago</option>
+                                            <option value="aguardando-pagamento">Aguardando pagamento</option>
+                                            <option value="cancelado">Cancelado</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Filtro de status de entrega -->
+                                    <div class="filter-section-status-de-entrega">
+                                        <h4>Status de entrega</h4>
+                                        <select class="filter-selects" id="filter-select-sts-de-entrega">
+                                            <option selected value>Todos os status</option>
+                                            <option value="entregue">Entregue</option>
+                                            <option value="a-caminho">A caminho</option>
+                                            <option value="em-preparacao">Em preparacão</option>
+                                        </select>
+                                    </div>
+
+                                    <!-- Filtro de Total -->
+                                    <div class="filter-section-total">
+                                        <h4>Total</h4>
+                                        <div class="filter-total-fields">
+                                            <div class="filter-total-field">
+                                                <label class="filter-labels-total">Mínimo</label>
+                                                <input type="text" class="filter-input-total" id="filter-input-total-min" placeholder="ex: 0">
+                                            </div>
+                                            <div class="filter-total-field">
+                                                <label class="filter-labels-total">Máximo</label>
+                                                <input type="text" class="filter-input-total" id="filter-input-total-max" placeholder="ex: 150">
+                                            </div>
+                                        </div>
+                                        <div id="filter-range-total"></div>
+                                    </div>
+
+                                    <!-- Seção de ações do filtro -->
+                                    <div class="filter-section-actions">
+                                        <button id="filter-btn-restart">
+                                            <i class="fa-solid fa-rotate"></i>
+                                            Restaura
+                                        </button>
+                                        <button id="filter-btn-filter">Filtrar</button>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="add">
+                            <button class="btn-add">
+                                + Venda
+                            </button>
+
+                            <!-- Modal de adicionar venda -->
+                             <div class="modal-addSale">
+                                <div class="addSale-conteiner">
+
+                                    <!-- Header do add sale-->
+                                    <div class="addSale-header">
+                                        <h3>Adicionar Venda</h3>
+                                        <button class="btn-close-addSale">
+                                            <i class="fa-solid fa-xmark"></i>
+                                        </button>
+                                    </div>
+
+                                    <!-- Formulario do add sale-->
+                                    <div class="addSale-form">
+
+                                        <div class="field-addSale">
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Cliente</label>
+                                                <input type="text" class="inputs-addSale" id="name-custumer-addSale" placeholder="Digite o nome do cliente" autocomplete="off" required>
+                                            </div>
+                                        </div>
+
+                                        <div class="field-addSale">
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Valor total</label>
+                                                <input type="text" class="inputs-addSale" id="value-sale-addSale" placeholder="0,00" autocomplete="off" required>
+                                            </div>
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Status de Pagamento</label>
+                                                <select class="selects-addSale" id="status-pagamento-addSale">
+                                                    <option value>Selecione</option>
+                                                    <option value="pago">Pago</option>
+                                                    <option value="aguardando-pagamento">Aguardando pagamento</option>
+                                                    <option value="cancelado">Cancelado</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="field-addSale">
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Modalidade da entrega</label>
+                                                <select class="selects-addSale" id="modalidade-entrega-addSale">
+                                                    <option value>Selecione</option>
+                                                    <option value="correios-pac">Correios - pac</option>
+                                                    <option value="correios-sedex">Correios - sedex</option>
+                                                    <option value="jadlog-expresso">Jadlog - expresso</option>
+                                                    <option value="jadlog-economico">Jadlog - economico</option>
+                                                    <option value="jadlog-packege">Jadlog - packege</option>
+                                                    <option value="99entrega-carro">99Entrega - carro</option>
+                                                    <option value="99entrega-moto">99Entrega - moto</option>
+                                                    <option value="retirada-no-local">Retirada no local</option>
+                                                </select>
+                                            </div>
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Status da entrega</label>
+                                                <select class="filter-selects" id="status-entrega-addSale">
+                                                    <option value>Selecione</option>
+                                                    <option value="entregue">Entregue</option>
+                                                    <option value="a-caminho">A caminho</option>
+                                                    <option value="em-preparacao">Em preparacão</option>
+                                                </select>
+                                            </div>
+                                        </div>
+
+                                        <div class="field-addSale">
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Canal de venda</label>
+                                                <select class="filter-selects" id="canal-de-venda-addSale">
+                                                    <option value>Selecione</option>
+                                                    <option value="e-commerce">E-Commerce</option>
+                                                    <option value="whatsapp">Whatsapp</option>
+                                                    <option value="loja-fisica">Loja fisica</option>
+                                                </select>
+                                            </div>
+                                            <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Data</label>
+                                                <input type="text" class="inputs-addSale" id="data-addSale">
+                                            </div>
+                                                <div class="conteiner-inputSelect">
+                                                <label class="labels-addSale">Quantidade de itens</label>
+                                                <input type="number" class="inputs-addSale" id="qtd-de-itens-addSale" min="0" placeholder="0" autocomplete="off" required>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <!-- Seção de ações do addSale -->
+                                    <div class="section-actions-addSale">
+                                        <button class="btn-cancel-addSale" id="btn-cancel-addSale">
+                                            Cancelar
+                                        </button>
+                                        <button class="btn-add-addSale" id="btn-add-addSale">
+                                            Adicionar venda
+                                        </button>
+                                    </div>
+
+                                </div>
+                             </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="table-body">
+                    <table class="table">
+                        <thead class="thead">
+                            <tr>
+                                <th class="th-pedido">
+                                    Pedido
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-data">
+                                    Data
+                                    <i class="fa-solid fa-arrow-down"></i>
+                                </th>
+                                <th class="th-cliente">
+                                    Cliente
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-canal-de-venda">
+                                    Canal de venda
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-total">
+                                    Total
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-status-de-pagamento">
+                                    Status de pagamento
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-itens">
+                                    Itens
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-status-de-entrega">
+                                    Status de entrega
+                                    <i class="fa-solid fa-arrow-up"></i>
+                                </th>
+                                <th class="th-acoes">
+
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="tbody">
+                            
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </main>
+
+    <script src="js/modules/modal.js" type="module"></script>
+    <script src="js/modules/format.js" type="module"></script>
+    <script src="js/modules/sales.js" type="module"></script>
+    <script src="js/modules/init.js" type="module"></script>
+    <script src="js/modules/searchTable.js" type="module"></script>
+    <script src="js/modules/filterTable.js" type="module"></script>
+    <script src="js/modules/cards.js" type="module"></script>
+    <script src="js/main.js" type="module"></script>
+</body>
+
+</html>

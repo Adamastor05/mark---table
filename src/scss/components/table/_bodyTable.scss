@@ -1,0 +1,219 @@
+
+.table-body {
+    width: 100%;
+    padding: 20px;
+    background-color: #141824;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    height: 33px;
+
+    th {
+        text-align: left;
+        font-size: 14px;
+        font-weight: 700;
+        border-bottom: 1px solid #60698181;
+        color: #9FA6BC;
+        cursor: pointer;
+
+        &:hover {
+            i {
+                color: #9FA6BC;
+                transition: all 0.2s ease;
+            }
+        }
+
+        i {
+            margin-left: 4px;
+            font-size: 10px;
+            color: transparent;
+        }
+    }
+
+    .th-pedido {
+        width: 100px;
+        height: 33px;
+        padding-left: 12px;
+    }
+
+    .th-data {
+        width: 160px;
+
+        i {
+            color: #9FA6BC;
+        }
+    }
+
+    .th-cliente {
+        width: 210px;
+    }
+
+    .th-canal-de-venda {
+        width: 165px;
+    }
+
+    .th-total {
+        width: 115px;
+    }
+
+    .th-status-de-pagamento {
+        width: 220px;
+    }
+
+    .th-itens {
+        width: 95px;
+    }
+
+    .th-status-de-entrega {
+        width: 210px;
+    }
+
+
+    .th-acoes {
+        width: 70px;
+        padding-right: 10px; 
+    }
+}
+
+
+
+
+tbody {
+    width: 100%;
+    
+    tr {
+        height: 45px;
+        border-bottom: 1px solid #60698181;
+        transition: all 0.1s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #171a2573;
+            transition: all 0.1s ease;
+
+            .btn-acoes {
+                border: 1px solid #60698181;
+            }
+        }
+    }
+}
+
+td {
+    height: 40px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    color: #9FA6BC;
+}
+
+
+.td-pedido {
+    padding-left: 12px;
+    color: #85A9FF;
+}
+
+.td-data {
+    font-size: parseRem(13.5);
+}
+
+// .td-status-de-pagamento 
+.conteiner-status-de-pagamento {
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    .content-status-de-pagamento {
+        min-width: 60px;
+        max-width: 220px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 12px;
+        font-weight: 400;
+    }
+
+    // Status = Pago
+    .content-status-de-pagamento.pago {
+        color: #9ad844;
+        background-color: #1c2c1a;
+    }
+
+    // Status = Aguardando Pagamento
+    .content-status-de-pagamento.aguardando-pagamento {
+        color: #d8ce44;
+        background-color: #2b2c1a;
+    }
+
+    // Status = Cancelado
+    .content-status-de-pagamento.cancelado {
+        color: #d84944;
+        background-color: #2c1d1a;
+    }
+    
+}
+
+// .td-status-de-entrega
+.conteiner-status-de-entrega {
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+
+    .content-status-de-entrega {
+        max-width: 160px;
+        height: 23px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        border-radius: 12px;
+        font-weight: 400;
+    }
+
+    .content-status-de-entrega.entregue {
+        color: #9ad844;
+        background-color: #1c2c1a;
+    }
+
+    .content-status-de-entrega.a-caminho {
+        color: #d8ce44;
+        background-color: #2b2c1a;
+    }
+
+    .content-status-de-entrega.em-preparacao {
+        color: #44d8b3;
+        background-color: #1a282c;
+    }
+}
+
+
+.td-acoes {
+    padding-right: 15px;
+
+    .btn-acoes {
+        width: 50px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: none;
+        border-radius: 6px;
+        color: #9FA6BC;
+        background-color: transparent;
+        transition: all 0.2s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #0d1018;
+            transition: all 0.2s ease;
+        }
+    }
+}

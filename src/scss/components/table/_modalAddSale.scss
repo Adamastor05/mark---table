@@ -1,0 +1,148 @@
+
+.modal-addSale {
+    width: parseRem(800);
+    height: parseRem(460);
+    flex-direction: column;
+    padding: parseRem(18);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -60%); // começa um pouco mais acima
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+    z-index: 1000;
+    border-radius: parseRem(6);
+    background-color: #141824;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%); // posição final
+        
+    }
+}
+
+
+// Header do modal de adicionar venda
+.addSale-header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: parseRem(16);
+
+    h3 {
+        font-size: parseRem(18);
+        color: #EFF2F6;
+    }
+
+    .btn-close-addSale {
+        width: parseRem(34); // 20px
+        height: parseRem(30); // 20px
+        align-content: center; // alinha os itens no centro
+        border: 1px solid #60698181;
+        border-radius: parseRem(4);
+        background-color: #141824;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #ffffff0e;
+            transition: 0.3s ease;
+        }
+
+        i {
+            margin-top: 2px;
+            font-size: parseRem(13); // 13 px
+            color: #f48270;
+        }
+    }
+}
+
+// Formulario do add sale
+.addSale-form {
+    width: 100%;
+
+    .field-addSale {
+        width: 100%;
+        height: parseRem(60);
+        display: flex;
+        align-items: center;
+        margin-bottom: parseRem(20);
+        gap: parseRem(15);
+
+        .conteiner-inputSelect {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+
+            label {
+                margin-left: parseRem(2);
+                margin-bottom: parseRem(4);
+                font-size: parseRem(13);
+                color: #8A94AD;
+            }
+
+            input {
+                @include input-style();
+                font-size: parseRem(13);
+                color: #9FA6BC;
+            }
+
+            select {
+                @include select-style();
+                font-size: parseRem(13);
+                color: #9FA6BC;
+                background-size: 15px 11px;
+            }
+
+            #data-addSale {
+                @include flatpickr-style();
+                font-size: parseRem(13);
+                color: #9FA6BC;
+                background-color: transparent;
+            }
+        }
+    }
+}
+
+.section-actions-addSale {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding: parseRem(16, 0);
+    gap: parseRem(30);
+
+    #btn-cancel-addSale {
+        border: none;
+        font-weight: 700;
+        color: #F48270;
+        background-color: transparent;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    #btn-add-addSale {
+        width: parseRem(130);
+        height: parseRem(35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #60698181;
+        border-radius: 6px;
+        font-weight: 700;
+        color: #85A9FF;
+        background-color: #0f111a;
+        transition: all 0.2s ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #222834;
+            transition: all 0.2s ease-in-out;
+        }
+    }
+}

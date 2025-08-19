@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>Busca na Tabela</title>
+  <style>
+    body {
+      background-color: #0e0e12;
+      color: #fff;
+      font-family: Arial;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #333;
+    }
+
+    input {
+      padding: 8px;
+      width: 300px;
+      border-radius: 4px;
+      border: none;
+      outline: none;
+    }
+
+    .green {
+      background-color: #1e3;
+      padding: 4px 10px;
+      border-radius: 12px;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <h2>Análise de Vendas</h2>
+  <input type="text" id="busca" placeholder="Pesquisar...">
+
+  <table>
+    <thead>
+      <tr>
+        <th>Pedido</th>
+        <th>Data</th>
+        <th>Cliente</th>
+        <th>Canal</th>
+        <th>Total</th>
+        <th>Pagamento</th>
+        <th>Itens</th>
+        <th>Entrega</th>
+      </tr>
+    </thead>
+    <tbody id="tabela-vendas"></tbody>
+  </table>
+
+  <script>
+    const vendas = [
+      { pedido: "#1001", data: "01/07/2025 19:43", cliente: "Aarcia almeida campos", canal: "E-Commerce", total: "105,00", pagamento: "Pago", itens: 1, entrega: "Entregue" },
+      { pedido: "#1002", data: "05/07/2025 19:43", cliente: "Barcia almeida campos", canal: "E-Commerce", total: "150,00", pagamento: "Pago", itens: 2, entrega: "Entregue" },
+      { pedido: "#1003", data: "10/07/2025 19:43", cliente: "Carcia almeida campos", canal: "E-Commerce", total: "R$220,00", pagamento: "Pago", itens: 3, entrega: "Entregue" },
+      { pedido: "#1004", data: "15/07/2025 19:43", cliente: "Darcia almeida campos", canal: "E-Commerce", total: "290,00", pagamento: "Pago", itens: 4, entrega: "Entregue" }
+    ];
+
+    const tabela = document.getElementById("tabela-vendas");
+    const input = document.getElementById("busca");
+
+    function renderizarTabela(lista) {
+      tabela.innerHTML = "";
+      lista.forEach(venda => {
+        tabela.innerHTML += `
+          <tr>
+            <td>${venda.pedido}</td>
+            <td>${venda.data}</td>
+            <td>${venda.cliente}</td>
+            <td>${venda.canal}</td>
+            <td>${venda.total}</td>
+            <td><span class="green">${venda.pagamento}</span></td>
+            <td>${venda.itens}</td>
+            <td><span class="green">${venda.entrega}</span></td>
+          </tr>
+        `;
+      });
+    }
+
+    function buscarVendas(termo) {
+      const termoLower = termo.toLowerCase();
+      return vendas.filter(v => 
+        v.pedido.toLowerCase().includes(termoLower) ||
+        v.data.toLowerCase().includes(termoLower) ||
+        v.cliente.toLowerCase().includes(termoLower) ||
+        v.canal.toLowerCase().includes(termoLower) ||
+        v.total.toLowerCase().includes(termoLower) ||
+        v.pagamento.toLowerCase().includes(termoLower) ||
+        v.entrega.toLowerCase().includes(termoLower)
+      );
+    }
+
+    input.addEventListener("input", () => {
+      const resultados = buscarVendas(input.value);
+      renderizarTabela(resultados);
+    });
+
+    // Renderiza a tabela inicialmente
+    renderizarTabela(vendas);
+  </script>
+</body>
+</html>

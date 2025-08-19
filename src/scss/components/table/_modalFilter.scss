@@ -1,0 +1,306 @@
+
+.btn-modal-filter {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #60698181;
+    border-radius: 6px;
+    background-color: #191d2c;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #0F111A;
+        transition: all 0.2s ease-in-out;
+
+        i {
+            color: #8f96a7;
+            transition: all 0.2s ease;
+        }
+    }
+
+    i { // icone do botão filtro
+        margin-top: 2px;
+        font-size: 13px;
+        color: #737a8d;
+        transition: all 0.2s ease;
+    }
+}
+
+
+// Modal de filtro
+.modal-filter {
+    width: parseRem(450);
+    height: parseRem(735);
+    border: 1px solid #60698181;
+    border-radius: parseRem(6);
+    background-color: #141824;
+    color: #cbd0dd;
+    position: fixed; // fixo na tela
+    z-index: 1000;
+    top: 50%;
+    left: 50%;
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -55%); // começa um pouquinho mais acima
+    transition: opacity 0.3s ease, transform 0.3s ease;
+
+    &.active {
+        opacity: 1;
+        pointer-events: auto;
+        transform: translate(-50%, -50%); // volta para posição final
+    }
+}
+
+
+// Header do modal de filtro
+.filter-header {
+    width: 100%;
+    height: parseRem(60); // 60px
+    padding: parseRem(16); // 16px
+    border-bottom: 1px solid #60698181;
+
+    .filter-header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .btn-close-filter {
+            width: parseRem(20); // 20px
+            height: parseRem(20); // 20px
+            border: none;
+            background-color: transparent;
+            cursor: pointer;
+
+            i {
+                font-size: parseRem(13); // 13 px
+                color: #f48270;
+            }
+        }
+    }
+}
+
+// Filtro de data
+.filter-section-date {
+    width: 100%;
+    height: parseRem(127); // 127px
+    padding: parseRem(10, 16, 14, 16);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #60698181;
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    .filter-date-fields {
+        width: 100%;
+        height: parseRem(80);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .filter-date-field {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            
+            .filter-labels-date {
+                font-weight: 600;
+                color: #8a8d96;
+                margin-bottom: parseRem(6)
+            }
+
+            .filter-input-date {
+                @include input-style();
+                padding: parseRem(8, 12, 8, 12);
+                font-size: parseRem(13);
+                background-color: #141824 !important;
+            }
+        }
+    }
+}
+
+.filter-selects {
+    @include select-style();
+    height: parseRem(35);
+    font-size: parseRem(14);
+    background-color: #141824;
+    color: #CBD0DD;
+    border: 1px solid #60698181;
+
+    // SVG do select. Aqui esta sendo usado para mudar a cor dele no: stroke='%23(cor que você quer)' exemplo: %23fffff ou %23CBD0DD
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='%23CBD0DD' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e");
+}
+
+ // Filtro de canal de vendas
+.filter-section-canal-de-venda {
+    width: 100%;
+    height: parseRem(100);
+    padding: parseRem(16);
+    border-bottom: 1px solid #60698181;
+
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: parseRem(8);
+    }
+}
+
+// Filtro de status de pagamento
+.filter-section-status-de-pagamengo {
+    width: 100%;
+    height: parseRem(100);
+    padding: parseRem(16);
+    border-bottom: 1px solid #60698181;
+
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: parseRem(8);
+    }
+}
+
+// Filtro de status de entrega
+.filter-section-status-de-entrega {
+    width: 100%;
+    height: parseRem(100);
+    padding: parseRem(16);
+    border-bottom: 1px solid #60698181;
+
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: parseRem(8);
+    }
+}
+
+// Filtro de total
+.filter-section-total {
+    width: 100%;
+    height: parseRem(175); // 175px
+    padding: parseRem(10, 16, 14, 16);
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #60698181;
+
+    h4 {
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 12px;
+        position: relative;
+    }
+
+    .filter-total-fields {
+        width: 100%;
+        height: parseRem(80);
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+
+        .filter-total-field {
+            width: 48%;
+            display: flex;
+            flex-direction: column;
+            
+            .filter-labels-total {
+                font-weight: 600;
+                color: #8a8d96;
+                margin-bottom: parseRem(6)
+            }
+
+            .filter-input-total {
+                @include input-style();
+                padding: parseRem(8, 12, 8, 12);
+                font-size: parseRem(13);
+                background-color: #141824 !important;
+            }
+        }
+    }
+
+    #filter-range-total {
+        margin-top: 15px;
+        margin-left: 3px;
+        border: none;
+        border-radius: 20px;
+        box-shadow: none;
+        background-color: #0c0e16;
+    }
+
+    .noUi-horizontal {
+        height: 11px;
+    }
+
+    .noUi-connect {
+        background-color: #85A9FF;
+    }
+
+    .noUi-handle::before,
+    .noUi-handle::after {
+        display: none;
+    }
+
+    .noUi-handle-lower, .noUi-handle-upper {
+        width: parseRem(20);
+        height: parseRem(20);
+        top: parseRem(-4); // -4px
+        right: parseRem(-8); // -15
+        border: none;
+        border-radius: 50%;
+        box-shadow: none;
+    }
+}
+
+.filter-section-actions {
+    display: flex;
+    justify-content: end;
+    padding: parseRem(22);
+    gap: parseRem(12);
+
+    #filter-btn-restart {
+        width: parseRem(100);
+        height: parseRem(30);
+        border: 1px solid #60698181;
+        border-radius: parseRem(5);
+        font-size: 13px;
+        color: #85A1D8;
+        background-color: #0F111A;
+        cursor: pointer;
+
+        &:hover {
+            background-color: transparent;
+            transition: all 0.2s ease-in-out;
+        }
+
+        i {
+            margin-right: 2px;
+            font-size: 11px;
+        }
+    }
+
+    #filter-btn-filter {
+        width: parseRem(120);
+        height: parseRem(30);
+        border: none;
+        border-radius: parseRem(5);
+        color: white;
+        background-color: #3874ff;
+        transition: 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #004DFF;
+            transition: 0.2s ease-in-out;
+        }
+    }
+}
