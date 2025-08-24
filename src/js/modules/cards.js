@@ -15,5 +15,4 @@ function renderCards() {
     spanAverageTicket.innerHTML = `${averageTicket.toLocaleString("pt-BR", {style: "currency", currency: "BRL"})}`
 }
 
-
 export { renderCards }

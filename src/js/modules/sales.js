@@ -228,5 +228,4 @@ function updateSortIcons(index, order) {
     });
 }
 
-
 export { addSale, sortByDateDescending, renderTable, sales, clearLocalStorage }
