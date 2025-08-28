@@ -378,6 +378,33 @@ main {
   margin-left: 8px;
 }
 
+.btn-modal-filter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(96, 105, 129, 0.5058823529);
+  border-radius: 6px;
+  background-color: #191d2c;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.btn-modal-filter:hover {
+  background-color: #0F111A;
+  transition: all 0.2s ease-in-out;
+}
+.btn-modal-filter:hover i {
+  color: #8f96a7;
+  transition: all 0.2s ease;
+}
+.btn-modal-filter i {
+  margin-top: 2px;
+  font-size: 13px;
+  color: #737a8d;
+  transition: all 0.2s ease;
+}
+
 .add {
   width: 100px;
   height: 35px;
@@ -578,33 +605,6 @@ td {
 }
 .td-acoes .btn-acoes:hover {
   background-color: #0d1018;
-  transition: all 0.2s ease;
-}
-
-.btn-modal-filter {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(96, 105, 129, 0.5058823529);
-  border-radius: 6px;
-  background-color: #191d2c;
-  transition: all 0.2s ease-in-out;
-  cursor: pointer;
-}
-.btn-modal-filter:hover {
-  background-color: #0F111A;
-  transition: all 0.2s ease-in-out;
-}
-.btn-modal-filter:hover i {
-  color: #8f96a7;
-  transition: all 0.2s ease;
-}
-.btn-modal-filter i {
-  margin-top: 2px;
-  font-size: 13px;
-  color: #737a8d;
   transition: all 0.2s ease;
 }
 

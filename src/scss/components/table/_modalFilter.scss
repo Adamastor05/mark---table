@@ -1,35 +1,4 @@
 
-.btn-modal-filter {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #60698181;
-    border-radius: 6px;
-    background-color: #191d2c;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-
-    &:hover {
-        background-color: #0F111A;
-        transition: all 0.2s ease-in-out;
-
-        i {
-            color: #8f96a7;
-            transition: all 0.2s ease;
-        }
-    }
-
-    i { // icone do botão filtro
-        margin-top: 2px;
-        font-size: 13px;
-        color: #737a8d;
-        transition: all 0.2s ease;
-    }
-}
-
-
 // Modal de filtro
 .modal-filter {
     width: parseRem(450);
