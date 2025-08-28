@@ -1,5 +1,6 @@
 @import "../assets/scss/fonts.scss";
-@import "../assets/scss/assets.scss";
+@import "../scss/utils/mixins.scss";
+@import "../scss/utils/fuctions.scss";
 
 // Estilo do date-picker
 @include flatpickr-style();

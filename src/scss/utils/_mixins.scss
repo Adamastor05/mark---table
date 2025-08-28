@@ -1,16 +1,4 @@
 
-// ===============================
-// function converter px para rem
-// ===============================
-@function parseRem($values...) {  // função para converter um valor em "px" para um valor em "rem".
-    $result: (); // Cria uma lista vazia.
-
-    @each $value in $values {    // essa linha em português seria "cada" $value em "$values", e como um forEach.
-        $converted: ($value / 16) * 1rem;
-        $result: append($result, $converted, space);
-    }
-    @return $result;
-}
 
 // ============================
 // Mixin select 
@@ -381,7 +369,4 @@
         border-radius: 0px;
     }
 }
-////////////////////////////////
-
-
-
+//////////////////////////
