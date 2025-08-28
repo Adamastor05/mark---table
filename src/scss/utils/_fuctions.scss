@@ -2,7 +2,7 @@
 // ===============================
 // function converter px para rem
 // ===============================
-@function parseRem($values...) {  // função para converter um valor em "px" para um valor em "rem".
+@function parseRem($values...) {
     $result: (); // Cria uma lista vazia.
 
     @each $value in $values {    // essa linha em português seria "cada" $value em "$values", e como um forEach.

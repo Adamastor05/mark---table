@@ -1,7 +1,7 @@
 
 .table-header {
     width: 100%;
-    height: 100px;
+    height: parseRem(100);
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -12,21 +12,21 @@
 }
 
 .table-header-title {
-    margin-left: 20px;
-    margin-bottom: 30px;
+    margin-left: parseRem(20);
+    margin-bottom: parseRem(30);
     color: #F9FAFD;
 }
 
 .table-header-search-filter-add {
-    width: 500px;
-    height: 70px;
+    width: parseRem(500);
+    height: parseRem(70);
     display: flex;
     align-items: center;
 }
 
 .div-input-search {
-    width: 280px;
-    height: 33px;
+    width: parseRem(280);
+    height: parseRem(33);
     display: flex;
     border: 1px solid #60698181;
     border-radius: 6px;
@@ -41,19 +41,19 @@
 
 
 .icon-search {
-    width: 50px;
-    height: 33px;
+    width: parseRem(50);
+    height: parseRem(33);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 13px;
+    font-size: parseRem(13);
     color: #606981;
     
 }
 
 .input-search {
     width: 100%;
-    padding: 6px;
+    padding: parseRem(6);
     border: none;
     border-radius: 6px;
     color: #8A94AD;
@@ -65,9 +65,9 @@
 }
 
 .filter {
-    width: 50px;
-    height: 33px;
-    margin-left: 8px;
+    width: parseRem(50);
+    height: parseRem(33);
+    margin-left: parseRem(8);
 }
 
 .btn-modal-filter {
@@ -93,8 +93,8 @@
     }
 
     i { // icone do botão filtro
-        margin-top: 2px;
-        font-size: 13px;
+        margin-top: parseRem(2);
+        font-size: parseRem(13);
         color: #737a8d;
         transition: all 0.2s ease;
     }
@@ -103,9 +103,9 @@
 
 
 .add {
-    width: 100px;
-    height: 35px;
-    margin-left: 46px;
+    width: parseRem(100); // 100px
+    height: parseRem(35); // 35 px
+    margin-left: parseRem(46); // 46 px
 
     .btn-add {
         width: 100%;

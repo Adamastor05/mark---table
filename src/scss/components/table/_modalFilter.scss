@@ -61,9 +61,9 @@
     border-bottom: 1px solid #60698181;
 
     h4 {
-        font-size: 16px;
+        font-size: parseRem(16);
         font-weight: 600;
-        margin-bottom: 12px;
+        margin-bottom: parseRem(12);
         position: relative;
     }
 
@@ -117,7 +117,7 @@
 
 
     h4 {
-        font-size: 16px;
+        font-size: parseRem(16);
         font-weight: 600;
         margin-bottom: parseRem(8);
     }
@@ -132,7 +132,7 @@
 
 
     h4 {
-        font-size: 16px;
+        font-size: parseRem(16);
         font-weight: 600;
         margin-bottom: parseRem(8);
     }
@@ -147,7 +147,7 @@
 
 
     h4 {
-        font-size: 16px;
+        font-size: parseRem(16);
         font-weight: 600;
         margin-bottom: parseRem(8);
     }
@@ -163,9 +163,9 @@
     border-bottom: 1px solid #60698181;
 
     h4 {
-        font-size: 16px;
+        font-size: parseRem(16);
         font-weight: 600;
-        margin-bottom: 12px;
+        margin-bottom: parseRem(12);
         position: relative;
     }
 
@@ -198,8 +198,8 @@
     }
 
     #filter-range-total {
-        margin-top: 15px;
-        margin-left: 3px;
+        margin-top: parseRem(15);
+        margin-left: parseRem(3);
         border: none;
         border-radius: 20px;
         box-shadow: none;
@@ -207,7 +207,7 @@
     }
 
     .noUi-horizontal {
-        height: 11px;
+        height: parseRem(11);
     }
 
     .noUi-connect {
@@ -241,7 +241,7 @@
         height: parseRem(30);
         border: 1px solid #60698181;
         border-radius: parseRem(5);
-        font-size: 13px;
+        font-size: parseRem(13);
         color: #85A1D8;
         background-color: #0F111A;
         cursor: pointer;
@@ -252,8 +252,8 @@
         }
 
         i {
-            margin-right: 2px;
-            font-size: 11px;
+            margin-right: parseRem(2);
+            font-size: parseRem(11);
         }
     }
 

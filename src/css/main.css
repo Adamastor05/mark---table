@@ -1,12 +1,12 @@
 @font-face {
   font-family: "Nunito";
-  src: url("scr/assets/fonts/Nunito-VariableFont_wght.ttf") format(truetype);
+  src: url("/src/assets/fonts/Nunito-VariableFont_wght.ttf") format(truetype);
   font-weight: 100 900;
   font-style: normal;
 }
 @font-face {
   font-family: "Nunito";
-  src: url("scr/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format(truetype);
+  src: url("/src/assets/fonts/Nunito-Italic-VariableFont_wght.ttf") format(truetype);
   font-weight: 100 900;
   font-style: italic;
 }
@@ -267,28 +267,28 @@ main {
 }
 
 .conteiner {
-  width: 1460px;
+  width: 91.25rem;
   height: 100vh;
 }
 
 .total-table {
   width: 100%;
-  height: 500px;
-  margin-top: 40px;
+  height: 31.25rem;
+  margin-top: 2.5rem;
 }
 
 .div-dados {
   width: 100%;
-  height: 150px;
-  margin-top: 40px;
+  height: 9.375rem;
+  margin-top: 2.5rem;
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 .div-grids {
-  width: 350px;
-  height: 110px;
+  width: 21.875rem;
+  height: 6.875rem;
   border-radius: 8px;
   border: 1px solid rgba(96, 105, 129, 0.5058823529);
   color: #F9FAFD;
@@ -298,20 +298,20 @@ main {
 .content-dados {
   width: 90%;
   height: 90%;
-  margin-top: 10px;
-  margin-left: 15px;
-  font-size: 14px;
+  margin-top: 0.625rem;
+  margin-left: 0.9375rem;
+  font-size: 0.875rem;
 }
 .content-dados span {
-  margin-top: 25px;
-  font-size: 22px;
+  margin-top: 1.5625rem;
+  font-size: 1.375rem;
   font-weight: 500;
   display: inline-block;
 }
 
 .table-header {
   width: 100%;
-  height: 100px;
+  height: 6.25rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -322,21 +322,21 @@ main {
 }
 
 .table-header-title {
-  margin-left: 20px;
-  margin-bottom: 30px;
+  margin-left: 1.25rem;
+  margin-bottom: 1.875rem;
   color: #F9FAFD;
 }
 
 .table-header-search-filter-add {
-  width: 500px;
-  height: 70px;
+  width: 31.25rem;
+  height: 4.375rem;
   display: flex;
   align-items: center;
 }
 
 .div-input-search {
-  width: 280px;
-  height: 33px;
+  width: 17.5rem;
+  height: 2.0625rem;
   display: flex;
   border: 1px solid rgba(96, 105, 129, 0.5058823529);
   border-radius: 6px;
@@ -350,18 +350,18 @@ main {
 }
 
 .icon-search {
-  width: 50px;
-  height: 33px;
+  width: 3.125rem;
+  height: 2.0625rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #606981;
 }
 
 .input-search {
   width: 100%;
-  padding: 6px;
+  padding: 0.375rem;
   border: none;
   border-radius: 6px;
   color: #8A94AD;
@@ -373,9 +373,9 @@ main {
 }
 
 .filter {
-  width: 50px;
-  height: 33px;
-  margin-left: 8px;
+  width: 3.125rem;
+  height: 2.0625rem;
+  margin-left: 0.5rem;
 }
 
 .btn-modal-filter {
@@ -399,16 +399,16 @@ main {
   transition: all 0.2s ease;
 }
 .btn-modal-filter i {
-  margin-top: 2px;
-  font-size: 13px;
+  margin-top: 0.125rem;
+  font-size: 0.8125rem;
   color: #737a8d;
   transition: all 0.2s ease;
 }
 
 .add {
-  width: 100px;
-  height: 35px;
-  margin-left: 46px;
+  width: 6.25rem;
+  height: 2.1875rem;
+  margin-left: 2.875rem;
 }
 .add .btn-add {
   width: 100%;
@@ -431,7 +431,7 @@ main {
 
 .table-body {
   width: 100%;
-  padding: 20px;
+  padding: 1.25rem;
   background-color: #141824;
 }
 
@@ -441,11 +441,11 @@ table {
 }
 
 thead {
-  height: 33px;
+  height: 2.0625rem;
 }
 thead th {
   text-align: left;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 700;
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
   color: #9FA6BC;
@@ -456,49 +456,49 @@ thead th:hover i {
   transition: all 0.2s ease;
 }
 thead th i {
-  margin-left: 4px;
-  font-size: 10px;
+  margin-left: 0.25rem;
+  font-size: 0.625rem;
   color: transparent;
 }
 thead .th-pedido {
-  width: 100px;
-  height: 33px;
-  padding-left: 12px;
+  width: 6.25rem;
+  height: 2.0625rem;
+  padding-left: 0.75rem;
 }
 thead .th-data {
-  width: 160px;
+  width: 10rem;
 }
 thead .th-data i {
   color: #9FA6BC;
 }
 thead .th-cliente {
-  width: 210px;
+  width: 13.125rem;
 }
 thead .th-canal-de-venda {
-  width: 165px;
+  width: 10.3125rem;
 }
 thead .th-total {
-  width: 115px;
+  width: 7.1875rem;
 }
 thead .th-status-de-pagamento {
-  width: 220px;
+  width: 13.75rem;
 }
 thead .th-itens {
-  width: 95px;
+  width: 5.9375rem;
 }
 thead .th-status-de-entrega {
-  width: 210px;
+  width: 13.125rem;
 }
 thead .th-acoes {
-  width: 70px;
-  padding-right: 10px;
+  width: 4.375rem;
+  padding-right: 0.625rem;
 }
 
 tbody {
   width: 100%;
 }
 tbody tr {
-  height: 45px;
+  height: 2.8125rem;
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
   transition: all 0.1s ease;
   cursor: pointer;
@@ -512,15 +512,15 @@ tbody tr:hover .btn-acoes {
 }
 
 td {
-  height: 40px;
+  height: 2.5rem;
   text-align: left;
-  font-size: 14px;
+  font-size: 0.875rem;
   font-weight: 500;
   color: #9FA6BC;
 }
 
 .td-pedido {
-  padding-left: 12px;
+  padding-left: 0.75rem;
   color: #85A9FF;
 }
 
@@ -529,19 +529,19 @@ td {
 }
 
 .conteiner-status-de-pagamento {
-  height: 23px;
+  height: 1.4375rem;
   display: flex;
   align-items: center;
   justify-content: left;
 }
 .conteiner-status-de-pagamento .content-status-de-pagamento {
-  min-width: 60px;
-  max-width: 220px;
-  height: 23px;
+  min-width: 3.75rem;
+  max-width: 13.75rem;
+  height: 1.4375rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 12px;
   font-weight: 400;
 }
@@ -559,18 +559,18 @@ td {
 }
 
 .conteiner-status-de-entrega {
-  height: 23px;
+  height: 1.4375rem;
   display: flex;
   align-items: center;
   justify-content: left;
 }
 .conteiner-status-de-entrega .content-status-de-entrega {
-  max-width: 160px;
-  height: 23px;
+  max-width: 10rem;
+  height: 1.4375rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 0.625rem;
   border-radius: 12px;
   font-weight: 400;
 }
@@ -588,11 +588,11 @@ td {
 }
 
 .td-acoes {
-  padding-right: 15px;
+  padding-right: 0.9375rem;
 }
 .td-acoes .btn-acoes {
-  width: 50px;
-  height: 30px;
+  width: 3.125rem;
+  height: 1.875rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -662,9 +662,9 @@ td {
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
 }
 .filter-section-date h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   position: relative;
 }
 .filter-section-date .filter-date-fields {
@@ -762,7 +762,7 @@ td {
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
 }
 .filter-section-canal-de-venda h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -774,7 +774,7 @@ td {
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
 }
 .filter-section-status-de-pagamengo h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -786,7 +786,7 @@ td {
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
 }
 .filter-section-status-de-entrega h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
@@ -800,9 +800,9 @@ td {
   border-bottom: 1px solid rgba(96, 105, 129, 0.5058823529);
 }
 .filter-section-total h4 {
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 0.75rem;
   position: relative;
 }
 .filter-section-total .filter-total-fields {
@@ -853,15 +853,15 @@ td {
   opacity: 1;
 }
 .filter-section-total #filter-range-total {
-  margin-top: 15px;
-  margin-left: 3px;
+  margin-top: 0.9375rem;
+  margin-left: 0.1875rem;
   border: none;
   border-radius: 20px;
   box-shadow: none;
   background-color: #0c0e16;
 }
 .filter-section-total .noUi-horizontal {
-  height: 11px;
+  height: 0.6875rem;
 }
 .filter-section-total .noUi-connect {
   background-color: #85A9FF;
@@ -891,7 +891,7 @@ td {
   height: 1.875rem;
   border: 1px solid rgba(96, 105, 129, 0.5058823529);
   border-radius: 0.3125rem;
-  font-size: 13px;
+  font-size: 0.8125rem;
   color: #85A1D8;
   background-color: #0F111A;
   cursor: pointer;
@@ -901,8 +901,8 @@ td {
   transition: all 0.2s ease-in-out;
 }
 .filter-section-actions #filter-btn-restart i {
-  margin-right: 2px;
-  font-size: 11px;
+  margin-right: 0.125rem;
+  font-size: 0.6875rem;
 }
 .filter-section-actions #filter-btn-filter {
   width: 7.5rem;
@@ -967,7 +967,7 @@ td {
   transition: 0.3s ease;
 }
 .addSale-header .btn-close-addSale i {
-  margin-top: 2px;
+  margin-top: 0.125rem;
   font-size: 0.8125rem;
   color: #f48270;
 }

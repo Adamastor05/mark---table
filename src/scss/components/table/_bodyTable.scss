@@ -1,7 +1,7 @@
 
 .table-body {
     width: 100%;
-    padding: 20px;
+    padding: parseRem(20);
     background-color: #141824;
 }
 
@@ -11,11 +11,11 @@ table {
 }
 
 thead {
-    height: 33px;
+    height: parseRem(33);
 
     th {
         text-align: left;
-        font-size: 14px;
+        font-size: parseRem(14);
         font-weight: 700;
         border-bottom: 1px solid #60698181;
         color: #9FA6BC;
@@ -29,20 +29,20 @@ thead {
         }
 
         i {
-            margin-left: 4px;
-            font-size: 10px;
+            margin-left: parseRem(4);
+            font-size: parseRem(10);
             color: transparent;
         }
     }
 
     .th-pedido {
-        width: 100px;
-        height: 33px;
-        padding-left: 12px;
+        width: parseRem(100);
+        height: parseRem(33);
+        padding-left: parseRem(12);
     }
 
     .th-data {
-        width: 160px;
+        width: parseRem(160);
 
         i {
             color: #9FA6BC;
@@ -50,33 +50,33 @@ thead {
     }
 
     .th-cliente {
-        width: 210px;
+        width: parseRem(210);
     }
 
     .th-canal-de-venda {
-        width: 165px;
+        width: parseRem(165);
     }
 
     .th-total {
-        width: 115px;
+        width: parseRem(115);
     }
 
     .th-status-de-pagamento {
-        width: 220px;
+        width: parseRem(220);
     }
 
     .th-itens {
-        width: 95px;
+        width: parseRem(95);
     }
 
     .th-status-de-entrega {
-        width: 210px;
+        width: parseRem(210);
     }
 
 
     .th-acoes {
-        width: 70px;
-        padding-right: 10px; 
+        width: parseRem(70);
+        padding-right: parseRem(10); 
     }
 }
 
@@ -87,7 +87,7 @@ tbody {
     width: 100%;
     
     tr {
-        height: 45px;
+        height: parseRem(45);
         border-bottom: 1px solid #60698181;
         transition: all 0.1s ease;
         cursor: pointer;
@@ -104,16 +104,16 @@ tbody {
 }
 
 td {
-    height: 40px;
+    height: parseRem(40);
     text-align: left;
-    font-size: 14px;
+    font-size: parseRem(14);
     font-weight: 500;
     color: #9FA6BC;
 }
 
 
 .td-pedido {
-    padding-left: 12px;
+    padding-left: parseRem(12);
     color: #85A9FF;
 }
 
@@ -123,19 +123,19 @@ td {
 
 // .td-status-de-pagamento 
 .conteiner-status-de-pagamento {
-    height: 23px;
+    height: parseRem(23);
     display: flex;
     align-items: center;
     justify-content: left;
 
     .content-status-de-pagamento {
-        min-width: 60px;
-        max-width: 220px;
-        height: 23px;
+        min-width: parseRem(60);
+        max-width: parseRem(220);
+        height: parseRem(23);
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
+        padding: parseRem(10);
         border-radius: 12px;
         font-weight: 400;
     }
@@ -162,18 +162,18 @@ td {
 
 // .td-status-de-entrega
 .conteiner-status-de-entrega {
-    height: 23px;
+    height: parseRem(23);
     display: flex;
     align-items: center;
     justify-content: left;
 
     .content-status-de-entrega {
-        max-width: 160px;
-        height: 23px;
+        max-width: parseRem(160);
+        height: parseRem(23);
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 10px;
+        padding: parseRem(10);
         border-radius: 12px;
         font-weight: 400;
     }
@@ -196,11 +196,11 @@ td {
 
 
 .td-acoes {
-    padding-right: 15px;
+    padding-right: parseRem(15);
 
     .btn-acoes {
-        width: 50px;
-        height: 30px;
+        width: parseRem(50);
+        height: parseRem(30);
         display: flex;
         align-items: center;
         justify-content: center;
