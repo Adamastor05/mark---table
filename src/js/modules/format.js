@@ -63,32 +63,27 @@ function formartarValor(param) {
 }
 
 function formatarStatusPagamento(string) {
-    if (string === "pago") {
-        return "Pago"
-    
-    } else if (string === "aguardando-pagamento") {
-        return "Aguardando pagamento"
-    
-    } else if (string === "cancelado") {
-        return "Cancelado"
-    
-    } else {
-        return ""
+    switch (string) {
+        case "pago":
+            return "Pago"
+        case "aguardando-pagamento":
+            return "Aguardando pagamento"
+        case "cancelado":
+            return "Cancelado"
+        default: return ""
     }
 }
 
 function formatarStatusEntrega(string) {
-    if (string === "entregue") {
-        return "Entregue"
-    
-    } else if (string === "a-caminho") {
-        return "A caminho"
-    
-    } else if (string === "em-preparacao") {
-        return "Em preparacao"
-    
-    } else {
-        return ""
+    switch (string) {
+        case "entregue":
+            return "Entregue"
+        case "a-caminho":
+            return "A caminho"
+        case "em-preparacao":
+            return "Em preparacao"
+        default:
+            return ""
     }
 }
 
