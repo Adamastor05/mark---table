@@ -10,7 +10,7 @@
     "sass": "sass --watch src/scss/main.scss:src/css/main.css --no-source-map"
   },
   "keywords": [],
-  "author": "",
+  "author": "Miguel Costa",
   "license": "ISC",
   "description": ""
 }

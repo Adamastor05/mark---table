@@ -1,0 +1,3 @@
+
+# Ignorar arquivos CSS compilados na análise de linguagens
+**/*.css linguist-generated=true
